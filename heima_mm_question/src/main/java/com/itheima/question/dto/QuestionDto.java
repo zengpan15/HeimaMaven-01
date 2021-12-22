@@ -1,7 +1,7 @@
 package com.itheima.question.dto;
 
-import lombok.Data;
 import com.itheima.question.pojo.Question;
+import lombok.Data;
 
 @Data
 public class QuestionDto {

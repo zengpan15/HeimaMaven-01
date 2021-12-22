@@ -1,9 +1,11 @@
+
 package com.itheima.question.vo;
 
 import com.itheima.question.pojo.Question;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.beans.BeanUtils;
 
 @Data
 @AllArgsConstructor
@@ -21,17 +23,7 @@ public class QuestionVo {
 
     public static QuestionVo fromQuestion(Question question) {
         QuestionVo questionVo = new QuestionVo();
-        questionVo.setId(question.getId());
-        questionVo.setCompanyName(question.getCompanyName());
-        questionVo.setCatalogName(question.getCatalogName());
-        questionVo.setSubject(question.getSubject());
-        questionVo.setType(question.getType());
-        questionVo.setDifficulty(question.getDifficulty());
-        questionVo.setIsClassic(question.getIsClassic());
-        questionVo.setState(question.getState());
-        questionVo.setReviewStatus(question.getReviewStatus());
+        BeanUtils.copyProperties(question, questionVo);
         return questionVo;
-
-
     }
 }

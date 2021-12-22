@@ -1,10 +1,14 @@
 package com.itheima.question.pojo;
 
+import com.baomidou.mybatisplus.annotation.TableName;
+import com.itheima.question.dto.QuestionDto;
 import lombok.Data;
+import org.springframework.beans.BeanUtils;
 
 import java.util.Date;
 
 @Data
+@TableName("st_question")
 public class Question {
     private String id;
     private String catalogId;
@@ -29,4 +33,10 @@ public class Question {
     private String companyId;
     private String companyName;
     private String picture;
+
+    public QuestionDto toQuestionDto() {
+        QuestionDto questionDto = new QuestionDto();
+        BeanUtils.copyProperties(this, questionDto);
+        return questionDto;
+    }
 }

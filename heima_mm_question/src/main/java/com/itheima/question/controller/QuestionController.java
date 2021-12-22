@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+
 import java.io.IOException;
 
 @RestController
@@ -29,11 +30,11 @@ public class QuestionController {
     private QuestionService questionService;
 
     @PostMapping("/add")
-    public Result addQuestion(@RequestBody QuestionDto questionDto) {
+    public Result<Object> addQuestion(@RequestBody QuestionDto questionDto) {
         if(questionService.addQuestion(questionDto)) {
-            return new Result(true,"添加成功",questionDto);
+            return new Result<>(true,"添加成功",questionDto);
         }
-        return new Result(false,"添加失败",null);
+        return new Result<>(false,"添加失败",null);
     }
 
     @PostMapping("/list")
@@ -60,5 +61,4 @@ public class QuestionController {
         }
         throw new  RuntimeException("文件上传失败");
     }
-
 }

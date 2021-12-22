@@ -8,6 +8,7 @@ import com.itheima.question.pojo.Question;
 import com.itheima.question.vo.QuestionVo;
 
 public interface QuestionService extends IService<Question> {
+
     boolean addQuestion(QuestionDto questionDto);
 
     PageVo<QuestionVo> listQuestionVo(QuestionPageDto questionPageDto);
