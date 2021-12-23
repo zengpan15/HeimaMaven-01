@@ -6,7 +6,6 @@
 
     <artifactId>heima_mm_pojo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-
     <parent>
         <groupId>com.example</groupId>
         <artifactId>HeimaMaven</artifactId>
@@ -18,6 +17,11 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-core</artifactId>
+            <version>5.5.3</version>
         </dependency>
     </dependencies>
 

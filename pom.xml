@@ -8,6 +8,7 @@
         <module>heima_mm_admin</module>
         <module>heima_mm_app</module>
         <module>heima_mm_question</module>
+        <module>heima_mm_task</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -38,7 +39,12 @@
             <artifactId>mybatis-spring-boot-starter</artifactId>
             <version>2.2.0</version>
         </dependency>
-
+        <!--fastdfs-->
+        <dependency>
+            <groupId>com.github.tobato</groupId>
+            <artifactId>fastdfs-client</artifactId>
+            <version>1.26.5</version>
+        </dependency>
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
@@ -65,6 +71,11 @@
             <version>3.4.3.4</version>
         </dependency>
         <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.78</version>
+        </dependency>
+        <dependency>
             <groupId>com.aliyun</groupId>
             <artifactId>aliyun-java-sdk-core</artifactId>
             <version>4.1.1</version>
@@ -89,6 +100,7 @@
             <artifactId>spring-boot-starter-data-redis</artifactId>
             <version>2.6.1</version>
         </dependency>
+
     </dependencies>
     <build>
         <resources>

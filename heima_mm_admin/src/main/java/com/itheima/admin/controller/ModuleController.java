@@ -17,6 +17,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/module")
+@CrossOrigin
 public class ModuleController {
 
     @Resource
@@ -35,6 +36,9 @@ public class ModuleController {
     @PostMapping("/add")
     public Result<Object> addModule(@RequestBody ModuleAddVo moduleAddVo){
         Module module = new Module();
+        if (moduleAddVo.getParentId()==null){
+            module.setParentName(moduleService.getById(module.getModuleId()).getName());
+        }
         BeanUtils.copyProperties(moduleAddVo, module);
         boolean result = moduleService.save(module);
         return Result.builder()
